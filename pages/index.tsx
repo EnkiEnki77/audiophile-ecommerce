@@ -15,8 +15,9 @@ const Home: NextPage = () => {
       </Head>
 
       <h2>Almost before we knew it, we had left the ground.</h2>
-      <Button btn='btn-1'>see product</Button>
-      <Button btn='btn-2'>see product</Button>
+      <Button btn='btn-1' href='/cards'>see product</Button>
+      <Button btn='btn-2' href='/cards'>see product</Button>
+      <Button btn='btn-3' href='/cards'>see product</Button>
     </div>
   )
 }
