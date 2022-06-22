@@ -1,6 +1,7 @@
 import { StaticImageData } from 'next/image'
 import React from 'react'
 import Button from './Button'
+import asd from '../public/assets/home/desktop/pattern-circles.svg'
 
 interface showcaseProps{
     img: StaticImageData,
@@ -12,7 +13,7 @@ const ProductShow = (props: showcaseProps) => {
   return (
     <>
         {props.id === 'zx9 speaker' &&
-            <div className='px-6 py-[55px] bg-brown rounded-lg flex flex-col items-center gap-6'>
+            <div className='px-6 py-[55px] bg-brown rounded-lg flex flex-col items-center gap-6 bg-circles bg-cover bg-bottom'>
                 <img className='h-[207px] w-auto mb-2' src={props.img.src} alt="" />
                 <h2 className='text-center text-white'>{props.id}</h2>
                 <p className='text-center text-white opacity-75'>Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>

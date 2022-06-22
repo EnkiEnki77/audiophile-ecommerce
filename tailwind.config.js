@@ -8,7 +8,8 @@ module.exports = {
     backgroundImage: {
       bannerBg: 'url(../public/assets/home/mobile/image-header.jpg)',
       zx7: 'url(../public/assets/home/mobile/image-speaker-zx7.jpg)',
-      yx1: 'url(../public/assets/home/mobile/image-earphones-yx1.jpg)'
+      yx1: 'url(../public/assets/home/mobile/image-earphones-yx1.jpg)',
+      circles: 'url(../public/assets/home/desktop/pattern-circles.svg)'
     },
 
     colors: {
