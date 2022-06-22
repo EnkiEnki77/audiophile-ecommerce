@@ -15,7 +15,7 @@ const FormElement = (props: formElement) => {
                 <label className='font-bold text-[12px] leading-4 tracking-tight mb-[20px]' htmlFor={props.id}>
                     {props.label}
                     <div className='w-[309px] h-14 border border-bordercol hover:border-brown active:border-brown
-                     rounded-lg flex items-center  mt-[9px] overflow-hidden'>
+                    rounded-lg flex items-center  mt-[9px] overflow-hidden'>
                         <input className=' overline tracking-tight normal-case text-black w-full 
                         outline-none font-bold h-full px-6'
                         type="text" placeholder="Insert your name" id={props.id}/>

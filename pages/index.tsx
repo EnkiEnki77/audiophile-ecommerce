@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import Button from '../components/Button'
+import Counter from '../components/Counter'
 import FormElement from '../components/FormElement'
 
 const Home: NextPage = () => {
@@ -21,6 +22,7 @@ const Home: NextPage = () => {
       <Button btn='btn-3' href='/cards'>see product</Button>
       <FormElement inputType='text' label='Name' id='name'/>
       <FormElement inputType='radio' label='e-Money' id='radio'/>
+      <Counter/>
     </div>
   )
 }
