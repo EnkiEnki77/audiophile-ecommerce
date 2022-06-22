@@ -41,7 +41,7 @@
 }
 
 @layer components{
-    .overline{
+    .overlines{
         @apply font-normal text-[14px] uppercase leading-[19px] tracking-[10px] text-brown
     }
 

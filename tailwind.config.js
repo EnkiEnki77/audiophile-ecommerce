@@ -5,6 +5,10 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
+    backgroundImage: {
+      bannerBg: 'url(../public/assets/home/mobile/image-header.jpg)'
+    },
+
     colors: {
       brown: '#D87D4A',
       brown2: '#fbaf85',

@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import Banner from '../components/Banner'
 import Button from '../components/Button'
 import Counter from '../components/Counter'
 import FormElement from '../components/FormElement'
@@ -17,7 +18,7 @@ const Home: NextPage = () => {
         <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap" rel="stylesheet"/>
       </Head>
       <Header/>
-      
+      <Banner/>
     </div>
   )
 }
