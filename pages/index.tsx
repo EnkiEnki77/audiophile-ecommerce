@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Banner from '../components/Banner'
 import Button from '../components/Button'
+import Categories from '../components/Categories'
 import Counter from '../components/Counter'
 import FormElement from '../components/FormElement'
 import Header from '../components/Header'
@@ -19,6 +20,7 @@ const Home: NextPage = () => {
       </Head>
       <Header/>
       <Banner/>
+      <Categories/>
     </div>
   )
 }

@@ -5,7 +5,8 @@ import arrow from '../public/assets/shared/desktop/icon-arrow-right.svg'
 interface buttonProps{
   btn: 'btn-1' | 'btn-2' | 'btn-3', 
   children: React.ReactNode, 
-  href: string
+  href: string,
+  className?: string
 }
 
 const Button = (props: buttonProps) => {
@@ -13,11 +14,11 @@ const Button = (props: buttonProps) => {
   return (
     <Link href={props.href}>
       {props.btn === 'btn-3' ? 
-        <div className='flex w-[56px] h-[18px] justify-between items-center group cursor-pointer'>
+        <div className={`flex w-[56px] h-[18px] justify-between items-center group cursor-pointer ${props.className}`}>
           <p className='sub-title leading-[18px] text-black group-hover:text-brown'>shop</p>
           <img src={arrow.src} alt="" className='object-contain'/>
         </div> :  
-        <button className={props.btn}>{props.children}</button>
+        <button className={props.btn }>{props.children}</button>
       } 
     </Link>
   )
