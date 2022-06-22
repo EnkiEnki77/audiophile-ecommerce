@@ -18,7 +18,7 @@ const Button = (props: buttonProps) => {
           <p className='sub-title leading-[18px] text-black group-hover:text-brown'>shop</p>
           <img src={arrow.src} alt="" className='object-contain'/>
         </div> :  
-        <button className={props.btn }>{props.children}</button>
+        <button className={`${props.btn} ${props.className}`}>{props.children}</button>
       } 
     </Link>
   )

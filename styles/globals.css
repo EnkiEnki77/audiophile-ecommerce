@@ -54,7 +54,7 @@
     }
 
     .btn-2{
-        @apply w-40 h-12 bg-white border border-black2 text-black2 hover:bg-black2 hover:text-white font-bold text-[13px] leading-[18px] tracking-[1px] uppercase
+        @apply w-40 h-12 bg-transparent border border-black2 text-black2 hover:bg-black2 hover:text-white font-bold text-[13px] leading-[18px] tracking-[1px] uppercase
     }
 
 }

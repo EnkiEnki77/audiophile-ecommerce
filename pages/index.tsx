@@ -7,6 +7,7 @@ import Categories from '../components/Categories'
 import Counter from '../components/Counter'
 import FormElement from '../components/FormElement'
 import Header from '../components/Header'
+import ProductShowCont from '../components/ProductShowCont'
 
 const Home: NextPage = () => {
   return (
@@ -20,7 +21,8 @@ const Home: NextPage = () => {
       </Head>
       <Header/>
       <Banner/>
-      <Categories/>
+      <Categories className='mb-[78px]'/>
+      <ProductShowCont/>
     </div>
   )
 }

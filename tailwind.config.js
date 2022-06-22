@@ -6,7 +6,9 @@ module.exports = {
   ],
   theme: {
     backgroundImage: {
-      bannerBg: 'url(../public/assets/home/mobile/image-header.jpg)'
+      bannerBg: 'url(../public/assets/home/mobile/image-header.jpg)',
+      zx7: 'url(../public/assets/home/mobile/image-speaker-zx7.jpg)',
+      yx1: 'url(../public/assets/home/mobile/image-earphones-yx1.jpg)'
     },
 
     colors: {
@@ -17,7 +19,8 @@ module.exports = {
       grey: '#F1F1F1',
       grey2: '#FAFAFA',
       bordercol: '#CFCFCF',
-      white: '#FFFFFF'
+      white: '#FFFFFF',
+      transparent: 'transparent'
     }, 
 
     fontFamily: {
