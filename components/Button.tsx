@@ -2,7 +2,13 @@ import Link from 'next/link'
 import React from 'react'
 import arrow from '../public/assets/Path 2.png'
 
-const Button = (props: {btn: string, children: React.ReactNode, href: string}) => {
+interface buttonProps{
+  btn: 'btn-1' | 'btn-2' | 'btn-3', 
+  children: React.ReactNode, 
+  href: string
+}
+
+const Button = (props: buttonProps) => {
   console.log(arrow)
   return (
     <Link href={props.href}>
@@ -12,8 +18,7 @@ const Button = (props: {btn: string, children: React.ReactNode, href: string}) =
           <img src={arrow.src} alt="" className='object-contain'/>
         </div> :  
         <button className={props.btn}>{props.children}</button>
-      }
-     
+      } 
     </Link>
   )
 }

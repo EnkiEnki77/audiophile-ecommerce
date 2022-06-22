@@ -12,6 +12,7 @@ module.exports = {
       black2: '#000000',
       grey: '#F1F1F1',
       grey2: '#FAFAFA',
+      bordercol: '#CFCFCF',
       white: '#FFFFFF'
     }, 
 
