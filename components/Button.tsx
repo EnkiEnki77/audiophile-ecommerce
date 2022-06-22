@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
-import arrow from '../public/assets/Path 2.png'
+import arrow from '../public/assets/shared/desktop/icon-arrow-right.svg'
 
 interface buttonProps{
   btn: 'btn-1' | 'btn-2' | 'btn-3', 
