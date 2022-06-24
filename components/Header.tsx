@@ -6,7 +6,7 @@ import cart from '../public/assets/shared/desktop/icon-cart.svg'
 
 const Header = () => {
   return (
-    <header className="h-[90px] bg-black2 flex items-center justify-around">
+    <header className="h-[90px] bg-black2 flex items-center justify-around fixed w-full z-20">
         <img src={hamburger.src} alt="" />
         <Link href='/'>
             <img src={siteLogo.src} alt="" />

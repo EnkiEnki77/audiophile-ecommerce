@@ -10,7 +10,6 @@ interface buttonProps{
 }
 
 const Button = (props: buttonProps) => {
-  console.log(arrow)
   return (
     <Link href={props.href}>
       {props.btn === 'btn-3' ? 
