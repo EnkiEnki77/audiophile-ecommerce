@@ -20,7 +20,7 @@ const CategoryItems = (props: categoryItem) => {
         {props.productNew  && <p className="overlines">new product</p>}
         <h4 className="text-center px-14">{props.productName}</h4>
         <p className="text-center px-2">{props.productDescript}</p>
-        <Button btn='btn-1' href={`/product-detail/${props.category}/${props.slug}s`} >see product</Button>
+        <Button btn='btn-1' href={`/product-detail/${props.category}/${props.slug}`} >see product</Button>
     </div>
   )
 }

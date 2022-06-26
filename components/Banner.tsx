@@ -7,7 +7,7 @@ const Banner = () => {
         <p className='overlines mb-4 text-center text-white opacity-50 '>new product</p>
         <h2 className='text-white mb-6 text-center text-4xl'>XX99 Mark II HeadphoneS</h2>
         <p className='mb-7 text-center text-white text-opacity-75 px-6'>Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</p>
-        <Button btn='btn-1' href='/product-detail/speakers/zx9-speakers'>see product</Button>
+        <Button btn='btn-1' href='/product-detail/headphones/xx99-mark-two-headphones'>see product</Button>
     </div>
   )
 }
