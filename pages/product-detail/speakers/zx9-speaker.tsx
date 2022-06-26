@@ -1,7 +1,20 @@
 import React from 'react'
+import AddToCart from '../../../components/AddToCart'
+import BestGear from '../../../components/BestGear'
+import Categories from '../../../components/Categories'
+import Features from '../../../components/Features'
+import Footer from '../../../components/Footer'
+import Header from '../../../components/Header'
+import InTheBox from '../../../components/InTheBox'
+import Preview from '../../../components/Preview'
+import Product from '../../../components/Product'
+import YouMayAlsoLike from '../../../components/YouMayAlsoLike'
+import headphones from '../../../public/assets/product-xx59-headphones/mobile/image-category-page-preview.jpg'
+import data from '../../../data.json'
+import Link from 'next/link'
 
 const ZX9Speakers = () => {
-  const itemData = data.filter(item => item.slug === 'xx99-mark-two-headphones')
+  const itemData = data.filter(item => item.slug === 'zx9-speaker')
   return (
     <>
       <Header/>
