@@ -1,9 +1,9 @@
 import React from 'react'
 
-const SummaryTotals = (props: {className:string, color:string, title: string, price: string}) => {
+const SummaryTotals = (props: {className?:string, color?:string, title: string, price: string}) => {
   return (
-    <div className={props.className}>
-        <p>{props.title}</p>
+    <div className={`flex justify-between  ${props.className} `}>
+        <p className="uppercase ">{props.title}</p>
         <h6 className={props.color}>{props.price}</h6>
     </div>
   )
