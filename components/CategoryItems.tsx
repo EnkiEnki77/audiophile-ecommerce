@@ -4,7 +4,7 @@ import Button from './Button'
 import imaage from '../public/assets/product-zx9-speaker/mobile/image-category-page-preview.jpg'
 
 interface categoryItem{
-    img: StaticImageData
+    img: {mobile: string, tablet: string, desktop: string}
     productName: string
     productDescript: string
     productNew: boolean
@@ -16,7 +16,7 @@ const CategoryItems = (props: categoryItem) => {
     console.log(props.img)
   return (
     <div className="flex flex-col items-center px-6 gap-6 mb-[120px]">
-        <img className='rounded-lg mb-2' src={props.img.src} alt="" />
+        <img className='rounded-lg mb-2' src={require(`../public${props.img.mobile.slice(1)}`).default.src} alt="" />
         {props.productNew  && <p className="overlines">new product</p>}
         <h4 className="text-center px-14">{props.productName}</h4>
         <p className="text-center px-2">{props.productDescript}</p>

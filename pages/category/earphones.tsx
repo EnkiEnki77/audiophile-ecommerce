@@ -10,15 +10,17 @@ import headphones from '../../public/assets/product-xx59-headphones/mobile/image
 
 const Speakers = () => {
   console.log(data)
-  const url = data[0].categoryImage.mobile.slice(1)
-  console.log(url)
+ 
+ 
   const items = data.filter(item => {return item.category === 'earphones'})
+  const url = items[0].categoryImage.mobile.slice(1)
+  console.log(items)
   return (
     <>
       <Header/>
       <CategoryHeader category='earphones'/>
       <div className='flex flex-col  mt-16'>
-          {items.map(item => {return <CategoryItems key={item.id} img={headphones} 
+          {items.map(item => {return <CategoryItems key={item.id} img={item.categoryImage} 
           productName={item.name} productDescript={item.description} productNew={item.new} slug={item.slug} category={item.category}/>})}
       </div>
       <Categories className='mb-[78px] pt-0'/>

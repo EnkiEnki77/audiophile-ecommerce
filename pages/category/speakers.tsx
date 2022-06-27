@@ -18,7 +18,7 @@ const Speakers = () => {
       <Header/>
       <CategoryHeader category='speakers'/>
       <div className='flex flex-col  mt-16'>
-          {items.map(item => {return <CategoryItems key={item.id} img={headphones} 
+          {items.map(item => {return <CategoryItems key={item.id} img={item.categoryImage} 
           productName={item.name} productDescript={item.description} productNew={item.new} slug={item.slug} category={item.category}/>})}
       </div>
       <Categories className='mb-[78px] pt-0'/>

@@ -15,7 +15,7 @@ import Link from 'next/link'
 
 const ZX9Speakers = () => {
   const itemData = data.filter(item => item.slug === 'zx9-speaker')
-  return (
+  return ( 
     <>
       <Header/>
       <Link href={`/category/${itemData[0].category}`}><p className='pt-[106px] px-6'>Go Back</p></Link>
