@@ -2,6 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 import CheckoutForm from '../components/CheckoutForm'
 import CheckoutModal from '../components/CheckoutModal'
+import ConfirmationModal from '../components/ConfirmationModal'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 
@@ -13,6 +14,7 @@ const Checkout = () => {
         <Link href={'#d'}><p className='pt-[106px] mb-6'>Go Back</p></Link>
         <CheckoutForm/>
         <CheckoutModal/>
+        <ConfirmationModal/>
       </div>
       
       <Footer/>
