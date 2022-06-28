@@ -21,7 +21,7 @@ const ConfirmationModal = () => {
                     <SummaryTotals title="Grand Total" color='text-white' price="$5,000" className='mt-2 flex-col gap-2'/>
                 </div>
             </div>
-            <Button btn='btn-1' notLink={true} className='w-full'>checkout</Button>
+            <Button btn='btn-1' notLink={true} className='w-full'>back to home</Button>
         </div>
       )
 }

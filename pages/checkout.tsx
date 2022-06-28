@@ -5,6 +5,7 @@ import CheckoutModal from '../components/CheckoutModal'
 import ConfirmationModal from '../components/ConfirmationModal'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
+import MobileMenu from '../components/MobileMenu'
 
 const Checkout = () => {
   return (
@@ -15,6 +16,7 @@ const Checkout = () => {
         <CheckoutForm/>
         <CheckoutModal/>
         <ConfirmationModal/>
+        <MobileMenu/>
       </div>
       
       <Footer/>
