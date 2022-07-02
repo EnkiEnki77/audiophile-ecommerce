@@ -2,11 +2,19 @@ import React from 'react'
 import Button from './Button'
 import Counter from './Counter'
 
-const AddToCart = () => {
+type AddToCartrProps = {
+  counter: number, 
+  decrement: (e: React.MouseEvent<HTMLParagraphElement, globalThis.MouseEvent>) => void
+  increment: (e: React.MouseEvent<HTMLParagraphElement, globalThis.MouseEvent>) => void
+  onAddToCart:  (e: React.MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) => void
+}
+
+const AddToCart = (props: AddToCartrProps) => {
+
   return (
     <div className="flex px-6 gap-4 mb-[88px]">
-        <Counter/>
-        <Button notLink={true} btn='btn-1'>Add to cart</Button>
+        <Counter counter={props.counter} decrement={props.decrement} increment={props.increment}/>
+        <Button onClick={props.onAddToCart} notLink={true} btn='btn-1'>Add to cart</Button>
     </div>
   )
 }

@@ -3,10 +3,8 @@ import Categories from './Categories'
 
 const MobileMenu = () => {
   return (
-    <div>
-        <div className='rounded-lg'>
-            <Categories/>
-        </div>
+    <div className='rounded-lg pt-[90px] z-10'>
+        <Categories/>
     </div>
   )
 }

@@ -2,12 +2,13 @@ import Link from 'next/link'
 import React from 'react'
 import arrow from '../public/assets/shared/desktop/icon-arrow-right.svg'
 
-interface buttonProps{
+type buttonProps = {
   btn: 'btn-1' | 'btn-2' | 'btn-3', 
   children: React.ReactNode, 
   href?: string,
   className?: string
-  notLink?: boolean
+  notLink?: boolean,
+  onClick?:  (e: React.MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) => void
 }
 
 const Button = (props: buttonProps) => {
@@ -30,7 +31,7 @@ const Button = (props: buttonProps) => {
               <p className='sub-title leading-[18px] text-black group-hover:text-brown'>shop</p>
               <img src={arrow.src} alt="" className='object-contain'/>
             </div> :  
-            <button className={`${props.btn} ${props.className}`}>{props.children}</button>
+            <button onClick={props.onClick} className={`${props.btn} ${props.className}`}>{props.children}</button>
           } 
        </>
         }
