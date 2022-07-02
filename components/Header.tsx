@@ -7,8 +7,15 @@ import MobileMenu from './MobileMenu'
 import Backdrop from './Backdrop'
 import CheckoutModal from './CheckoutModal'
 
+type cartObj = {
+  img: {mobile: string, tablet: string, desktop: string},
+  name: string,
+  price: number,
+  counter: number
+}
+
 type HeaderProps = {
-  cart: number[]
+  cart: cartObj[]
 }
 
 const Header = (props: HeaderProps) => {

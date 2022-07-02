@@ -13,7 +13,7 @@ const AddToCart = (props: AddToCartrProps) => {
 
   return (
     <div className="flex px-6 gap-4 mb-[88px]">
-        <Counter counter={props.counter} decrement={props.decrement} increment={props.increment}/>
+        <Counter className="counter-lg" counter={props.counter} decrement={props.decrement} increment={props.increment}/>
         <Button onClick={props.onAddToCart} notLink={true} btn='btn-1'>Add to cart</Button>
     </div>
   )

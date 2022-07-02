@@ -5,10 +5,13 @@ import Counter from './Counter'
 type CounterProps = {
   checkout?: boolean
   defaultCounter: number
+  price: number
+  name: string
+  img: {mobile:string, desktop: string, tablet: string}
 }
 
 const SummaryItems = (props: CounterProps) => {
-  const [counter, setCounter] = useState(0)
+  const [counter, setCounter] = useState(props.defaultCounter)
 
   const decrement = (e: React.MouseEvent<HTMLParagraphElement, globalThis.MouseEvent>) =>  {
     if(counter === 0){
@@ -23,16 +26,29 @@ const SummaryItems = (props: CounterProps) => {
   }
 
   return (
-    <div className="flex">
-        <img className='w-16 h-auto rounded-lg ' src={headphones.src} alt="" />
-        <div className="flex  justify-between w-full pl-4 items-center">
-            <div className="flex flex-col">
-                <h6 className=''>XX59</h6>
-                <p className=''>$2999</p> 
-            </div>  
-            {props.checkout ? <Counter defaultCounter={props.defaultCounter}  counter={counter} decrement={decrement} increment={increment}/> : <p className='flex flex-col justify-end'>x1</p> }
-        </div>
-    </div>
+  <>
+     {props.checkout ? <div className="flex">
+          <img className='w-16 h-auto rounded-lg ' src={require(`../public${props.img.mobile.slice(1)}`).default.src} alt="" />
+          <div className="flex  justify-between w-full pl-4 items-center">
+              <div className="flex flex-col">
+                  <p className='font-bold'>{props.name}</p>
+                  <p className=''>{props.price}</p> 
+              </div>  
+              <Counter className='counter-sm'  counter={counter} decrement={decrement} increment={increment}/>
+          </div>
+      </div>
+      :
+      <div className="flex">
+          <img className='w-16 h-auto rounded-lg ' src={require(`../public${props.img.mobile.slice(1)}`).default.src} alt="" />
+          <div className="flex  justify-between w-full pl-4 items-center">
+              <div className="flex flex-col">
+                  <h6 className=''>{props.name}</h6>
+                  <p className=''>{props.price}</p> 
+              </div>  
+              <p className='flex flex-col justify-end'>x1</p> 
+          </div>
+      </div>}
+  </>
   )
 }
 

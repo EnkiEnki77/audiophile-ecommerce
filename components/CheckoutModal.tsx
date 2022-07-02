@@ -3,15 +3,22 @@ import Button from './Button'
 import SummaryItems from './SummaryItems'
 import SummaryTotals from './SummaryTotals'
 
+type cartObj = {
+  img: {mobile: string, tablet: string, desktop: string},
+  name: string,
+  price: number,
+  counter: number
+}
+
 type HeaderProps = {
-  cart: number[]
+  cart: cartObj[]
 }
 
 const CheckoutModal = (props:HeaderProps) => {
 
   console.log(props.cart)
 
-  const cartItems:number[] = [...props.cart]
+  const cartItems:cartObj[] = [...props.cart]
 
   const Cart = (e:React.MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) => {
     console.log(...props.cart)
@@ -23,7 +30,7 @@ const CheckoutModal = (props:HeaderProps) => {
             <h6>Cart (3)</h6>
             <p className='underline cursor-pointer opacity-50'>Remove all</p>
         </div>
-        {cartItems.map(item => <SummaryItems defaultCounter={item} checkout={true}/>)}
+        {cartItems.map(item => <SummaryItems defaultCounter={item.counter} price={item.price} name={item.name} img={item.img} checkout={true}/>)}
         <SummaryTotals title="TOTAL" price="$5,000" className='mt-2'/>
         <Button onClick={Cart}  btn='btn-1' notLink={true} className='w-full'>checkout</Button>
     </div>

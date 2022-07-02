@@ -13,11 +13,20 @@ import headphones from '../../../public/assets/product-xx59-headphones/mobile/im
 import data from '../../../data.json'
 import Link from 'next/link'
 
-const XX99MarkIIHeadphones = () => {
-  const itemData = data.filter(item => item.slug === 'xx99-mark-two-headphones')
+type cartObj = {
+  img: {mobile: string, tablet: string, desktop: string},
+  name: string,
+  price: number,
+  counter: number
+}
 
+const XX99MarkIIHeadphones = () => {
+
+ 
+  const itemData = data.filter(item => item.slug === 'xx99-mark-two-headphones')
+  console.log(itemData)
   const [counter, setCounter] = useState(0)
-  const [cart, setCart] = useState<[] | number[]>([])
+  const [cart, setCart] = useState<[] | cartObj[]>([])
   
 
   const decrement = (e: React.MouseEvent<HTMLParagraphElement, globalThis.MouseEvent>) =>  {
@@ -34,8 +43,10 @@ const XX99MarkIIHeadphones = () => {
 
   const onAddToCart = ( e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     console.log('added to cart')
-    setCart(prevState => [...prevState, counter])
+    setCart(prevState => [...prevState, {img:itemData[0].image, name:itemData[0].name.replace(' Headphones','').replace('Mark', 'MK'), price: itemData[0].price, counter: counter}])
   }
+
+  console.log(itemData[0].name)
 
   return (
     <>

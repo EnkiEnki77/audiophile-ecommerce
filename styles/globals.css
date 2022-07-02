@@ -57,6 +57,12 @@
         @apply w-40 h-12 bg-transparent border border-black2 text-black2 hover:bg-black2 hover:text-white font-bold text-[13px] leading-[18px] tracking-[1px] uppercase
     }
 
-    
+    .counter-sm{
+        @apply w-24 h-8
+    }
+
+    .counter-lg{
+        @apply w-[120px] h-12
+    }
 
 }
