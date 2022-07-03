@@ -29,14 +29,18 @@ const CheckoutModal = (props:HeaderProps) => {
     console.log(cartItems)
   }
 
+  const RemoveAll = (e:React.MouseEvent<HTMLParagraphElement, globalThis.MouseEvent>) => {
+    cartItems.pop()
+  }
+
   return (
-    <div className="max-w-[327px] px-7 py-8 bg-white rounded-lg gap-6 flex flex-col">
+    <div className="max-w-[327px] px-7 py-8 bg-white rounded-lg gap-6 flex flex-col pt-24">
         <div className="flex justify-between mb-2">
-            <h6>Cart (3)</h6>
-            <p className='underline cursor-pointer opacity-50'>Remove all</p>
+            <h6>Cart ({cartItems.length})</h6>
+            <p onClick={RemoveAll} className='underline cursor-pointer opacity-50'>Remove all</p>
         </div>
         {cartItems.map(item => <SummaryItems defaultCounter={item.counter} price={item.price} name={item.name} img={item.img} checkout={true}/>)}
-        <SummaryTotals title="TOTAL" price="$5,000" className='mt-2'/>
+        <SummaryTotals title="TOTAL" price={cartItems[0].price.toString()} className='mt-2'/>
         <Button onClick={Cart}  btn='btn-1' notLink={true} className='w-full'>checkout</Button>
     </div>
   )
