@@ -33,6 +33,8 @@ const CheckoutModal = (props:HeaderProps) => {
     cartItems.pop()
   }
 
+  
+
   return (
     <div className="max-w-[327px] px-7 py-8 bg-white rounded-lg gap-6 flex flex-col pt-24">
         <div className="flex justify-between mb-2">
