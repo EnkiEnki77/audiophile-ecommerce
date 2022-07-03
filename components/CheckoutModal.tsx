@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Button from './Button'
 import SummaryItems from './SummaryItems'
 import SummaryTotals from './SummaryTotals'
@@ -15,15 +15,20 @@ type HeaderProps = {
 }
 
 const CheckoutModal = (props:HeaderProps) => {
+  // const [cartItem, setCartItem] = useState<[] | cartObj[]>([])
 
-  console.log(props.cart)
+  // useEffect(() =>{
+  //   setCartItem(props.cart)
+  // }, [props.cart[0].counter])
+
+  // console.log(props.cart[0].counter)
 
   const cartItems:cartObj[] = [...props.cart]
 
   const Cart = (e:React.MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) => {
-    console.log(...props.cart)
+    console.log(cartItems)
   }
-  
+
   return (
     <div className="max-w-[327px] px-7 py-8 bg-white rounded-lg gap-6 flex flex-col">
         <div className="flex justify-between mb-2">

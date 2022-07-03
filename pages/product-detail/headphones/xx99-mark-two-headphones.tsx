@@ -43,7 +43,7 @@ const XX99MarkIIHeadphones = () => {
 
   const onAddToCart = ( e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     console.log('added to cart')
-    setCart(prevState => [...prevState, {img:itemData[0].image, name:itemData[0].name.replace(' Headphones','').replace('Mark', 'MK'), price: itemData[0].price, counter: counter}])
+    setCart([{img:itemData[0].image, name:itemData[0].name.replace(' Headphones','').replace('Mark', 'MK'), price: itemData[0].price, counter: counter}])
   }
 
   console.log(itemData[0].name)
