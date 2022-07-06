@@ -12,7 +12,7 @@ interface categoryProps{
 const Category = (props: categoryProps) => {
    
   return (
-    <div className="relative h-[217px] flex flex-col justify-end items-center ">
+    <div className="relative h-[217px] md:basis-1/3 flex flex-col justify-end items-center ">
         <img className='w-auto h-[134px] absolute top-0  ' src={props.img.src} alt="" />
         <div className='w-full h-[165px] bg-grey flex flex-col  justify-end items-center rounded-lg'>
             <h6 className='mb-[17px]'>{props.category}</h6>

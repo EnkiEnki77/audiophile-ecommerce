@@ -40,12 +40,12 @@ const Header = (props: HeaderProps) => {
 
   return (
     <div className='relative w-full '>
-      <header className="h-[90px] bg-black2 flex items-center justify-around fixed w-full z-20">
+      <header className="h-[90px] bg-black2 flex items-center justify-around md:justify-start md:px-10 md:gap-10 fixed w-full z-20">
           <img src={hamburger.src} alt="" onClick={handleToggleMenu}/>
           <Link href='/'>
               <img src={siteLogo.src} alt="" onClick={() => {return( setToggleCart(false), setToggleMenu(false))}}/>
           </Link>
-          <img src={cart.src} alt="" onClick={handleToggleCart} />
+          <img className='md:ml-auto' src={cart.src} alt="" onClick={handleToggleCart} />
       </header>
       {toggleMenu && [<MobileMenu/>, <Backdrop/>]}
       {toggleCart && [<CheckoutModal cart = {props.cart}/>, <Backdrop/>]}

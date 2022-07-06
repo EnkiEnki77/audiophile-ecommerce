@@ -8,9 +8,9 @@ const Summary = () => {
     <div className="p-6 bg-white rounded-lg mb-[97px]">
       <h6 className="mb-8">Summary</h6>
       <div className="flex flex-col gap-6 mb-8">
-        <SummaryItems/>
-        <SummaryItems/>
-        <SummaryItems/>
+        <SummaryItems defaultCounter={0} price={1000} name='cunt' img={{mobile:'./assets/cart/image-zx9-speaker.jpg', tablet:'./assets/cart/image-zx9-speaker.jpg', desktop:'./assets/cart/image-zx9-speaker.jpg',}}/>
+        <SummaryItems defaultCounter={0} price={1000} name='cunt' img={{mobile:'./assets/cart/image-zx9-speaker.jpg', tablet:'./assets/cart/image-zx9-speaker.jpg', desktop:'./assets/cart/image-zx9-speaker.jpg',}}/>
+        <SummaryItems defaultCounter={0} price={1000} name='cunt' img={{mobile:'./assets/cart/image-zx9-speaker.jpg', tablet:'./assets/cart/image-zx9-speaker.jpg', desktop:'./assets/cart/image-zx9-speaker.jpg',}}/>
       </div>
       <div className="flex flex-col gap-2">
         <SummaryTotals title="Total" price="$5,300"/>

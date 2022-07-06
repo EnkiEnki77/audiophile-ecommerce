@@ -12,7 +12,7 @@
     }
 
     h1{
-        @apply font-bold text-[56px] uppercase leading-[58px] tracking-[2px]
+        @apply font-bold md:text-[56px] uppercase md:leading-[58px] md:tracking-[2px]
     }
 
     h2{

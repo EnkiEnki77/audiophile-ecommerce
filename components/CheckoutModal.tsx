@@ -22,8 +22,7 @@ const CheckoutModal = (props:HeaderProps) => {
   // }, [props.cart[0].counter])
 
   // console.log(props.cart[0].counter)
-
-  const cartItems:cartObj[] = [...props.cart]
+  let cartItems:cartObj[] = [...props.cart]
 
   const Cart = (e:React.MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) => {
     console.log(cartItems)
@@ -43,7 +42,7 @@ const CheckoutModal = (props:HeaderProps) => {
         </div>
         {cartItems.map(item => <SummaryItems defaultCounter={item.counter} price={item.price} name={item.name} img={item.img} checkout={true}/>)}
         <SummaryTotals title="TOTAL" price={cartItems[0].price.toString()} className='mt-2'/>
-        <Button onClick={Cart}  btn='btn-1' notLink={true} className='w-full'>checkout</Button>
+        <Button onClick={Cart}  btn='btn-1' href={'/checkout'}  className='w-full'>checkout</Button>
     </div>
   )
 }

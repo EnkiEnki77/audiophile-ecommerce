@@ -21,7 +21,7 @@ type cartObj = {
 }
 
 const XX59Headphones = () => {
-  const itemData = data.filter(item => item.slug === 'xx99-mark-two-headphones')
+  const itemData = data.filter(item => item.slug === 'xx59-headphones')
   console.log(itemData)
   const [counter, setCounter] = useState(0)
   const [cart, setCart] = useState<[] | cartObj[]>([])
