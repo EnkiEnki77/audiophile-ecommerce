@@ -8,7 +8,7 @@ module.exports = {
     backgroundImage: {
       bannerBg: 'url(../public/assets/home/mobile/image-header.jpg)',
       mdBannerBg: 'url(../public/assets/home/tablet/image-header.jpg)',
-      lgBannerBg: 'url(../public/assets/home/tablet/image-hero.jpg)',
+      lgBannerBg: 'url(../public/assets/home/desktop/image-hero.jpg)',
       zx7: 'url(../public/assets/home/mobile/image-speaker-zx7.jpg)',
       mdzx7: 'url(../public/assets/home/tablet/image-speaker-zx7.jpg)',
       lgzx7: 'url(../public/assets/home/desktop/image-speaker-zx7.jpg)',

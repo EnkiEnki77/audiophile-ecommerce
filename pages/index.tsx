@@ -6,6 +6,7 @@ import BestGear from '../components/BestGear'
 import Button from '../components/Button'
 import Categories from '../components/Categories'
 import Counter from '../components/Counter'
+import { DynamicHeader } from '../components/DynamicHeader'
 import Footer from '../components/Footer'
 import FormElement from '../components/FormElement'
 import Header from '../components/Header'
@@ -21,7 +22,7 @@ const Home: NextPage = () => {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin = 'true'/>
         <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap" rel="stylesheet"/>
       </Head>
-      <Header/>
+      <DynamicHeader/>
       <Banner/>
       <Categories className='mb-[78px]'/>
       <ProductShowCont/>
