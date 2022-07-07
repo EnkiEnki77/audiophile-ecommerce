@@ -36,7 +36,7 @@ const ProductShow = (props: showcaseProps) => {
         props.id === 'yx1 earphones' &&
             <div className='h-[424px] md:h-80 flex flex-col md:flex-row justify-between lg:gap-6'>
                 <div className='bg-yx1 md:bg-mdyx1 lg:bg-lgyx1 md:basis-1/2 bg-cover h-[200px] md:h-full rounded-lg'></div>
-                <div className='flex flex-col md:basis-1/2 justify-between md:justify-center px-6 py-[41px] bg-grey rounded-lg gap-8'>
+                <div className='flex flex-col md:basis-1/2 justify-between md:justify-center px-6 lg:px-[95px] py-[41px] bg-grey rounded-lg gap-8'>
                     <h4>{props.id}</h4>
                     <Button btn='btn-2' href={props.path}>see product</Button>
                 </div>
