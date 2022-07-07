@@ -13,7 +13,7 @@ const ProductShowCont = () => {
         {img: yx1, path: '/product-detail/earphones/yx1-wireless-earphones', id: "yx1 earphones"}
     ]
   return (
-    <div className="px-6 md:px-10 lg:px-[165px] flex flex-col gap-6 lg:gap-12 mb-[120px]">
+    <div className="px-6 md:px-10 lg:px-[165px] flex flex-col gap-6 lg:gap-12 mb-[120px] lg:mb-[200px]">
         {showcase.map(item => <ProductShow key={item.id} img={item.img} path={item.path} id={item.id}/>)}
     </div>
   )
