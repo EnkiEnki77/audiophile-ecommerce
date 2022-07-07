@@ -17,7 +17,7 @@ const Speakers = () => {
     <>
       <Header/>
       <CategoryHeader category='headphones'/>
-      <div className='flex flex-col  mt-16'>
+      <div className='flex flex-col  mt-16 md:mt-[120px]'>
           {items.map(item => {return <CategoryItems key={item.id} img={item.categoryImage} 
           productName={item.name} productDescript={item.description} productNew={item.new} slug={item.slug} category={item.category}/>})}
       </div>
