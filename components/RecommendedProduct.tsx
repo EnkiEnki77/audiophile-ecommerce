@@ -3,8 +3,8 @@ import Button from './Button'
 
 
 
-const RecommendedProduct = (props: {name: string, slug: string, image: string}) => {
-    const image = require(`../public${props.image.slice(1)}`)
+const RecommendedProduct = (props: {name: string, slug: string, image: {[k: string]: string}}) => {
+   
     let category = ''
     
 
@@ -18,7 +18,11 @@ const RecommendedProduct = (props: {name: string, slug: string, image: string}) 
 
   return (
     <div className="flex flex-col gap-8 items-center mb-14">
-        <img src={image.default.src} alt="" />
+        <picture> 
+            <source srcSet={require(`../public${props.image.desktop.slice(1)}`).default.src} media='(min-width: 1024px)'/>
+            <source srcSet={require(`../public${props.image.tablet.slice(1)}`).default.src} media='(min-width: 768px)'/>
+            <img className="md:max-h-[318px]" src={require(`../public${props.image.mobile.slice(1)}`).default.src} alt="" />
+        </picture>
         <h5>{props.name}</h5>
         <Button btn='btn-1' href={`/product-detail/${category}/${props.slug}`}>see product</Button>
     </div>
