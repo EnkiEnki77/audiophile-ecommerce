@@ -3,6 +3,7 @@ import BestGear from '../../components/BestGear'
 import Categories from '../../components/Categories'
 import CategoryHeader from '../../components/CategoryHeader'
 import CategoryItems from '../../components/CategoryItems'
+import { DynamicHeader } from '../../components/DynamicHeader'
 import Footer from '../../components/Footer'
 import Header from '../../components/Header'
 import data from '../../data.json'
@@ -17,9 +18,9 @@ const Speakers = () => {
   console.log(items)
   return (
     <>
-      <Header/>
+      <DynamicHeader/>
       <CategoryHeader category='earphones'/>
-      <div className='flex flex-col  mt-16'>
+      <div className='flex flex-col  mt-16 md:mt-[120px]'>
           {items.map(item => {return <CategoryItems key={item.id} img={item.categoryImage} 
           productName={item.name} productDescript={item.description} productNew={item.new} slug={item.slug} category={item.category}/>})}
       </div>

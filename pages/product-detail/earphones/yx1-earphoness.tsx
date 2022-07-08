@@ -12,6 +12,7 @@ import YouMayAlsoLike from '../../../components/YouMayAlsoLike'
 import headphones from '../../../public/assets/product-xx59-headphones/mobile/image-category-page-preview.jpg'
 import data from '../../../data.json'
 import Link from 'next/link'
+import { DynamicHeader } from '../../../components/DynamicHeader'
 
 
 const YX1WirelessEarphones = () => {
@@ -19,7 +20,7 @@ const YX1WirelessEarphones = () => {
   console.log(itemData)
   return (
     <>
-      <Header/>
+      <DynamicHeader/>
       <Link href={`/category/${itemData[0].category}`}><p className='pt-[106px] px-6'>Go Back</p></Link>
       <Product image={itemData[0].image} new={itemData[0].new} name={itemData[0].name} description={itemData[0].description} price={itemData[0].price}/>
       <AddToCart/>
