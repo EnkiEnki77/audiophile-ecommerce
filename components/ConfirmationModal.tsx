@@ -13,7 +13,7 @@ const ConfirmationModal = () => {
             <p className='opacity-75'>You will receive an email confirmation shortly.</p>
             <div className="rounded-lg overflow-hidden">
                 <div className="bg-grey p-6 flex flex-col gap-4">
-                    <SummaryItems />
+                    <SummaryItems defaultCounter={0} price={2000} name='here' img={{mobile:'here', tablet:'here', desktop:'here' }} />
                     <hr className="border-black/10"/>
                     <p className='text-center opacity-75 text-xs'>and 2 other item(s)</p>
                 </div>

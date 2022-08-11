@@ -24,7 +24,7 @@ const Product = (props: productProps) => {
     console.log(price)
 
   return (
-    <div className="px-6 md:px-10 flex flex-col md:flex-row gap-6 md:gap-[70px] mb-6 mt-6 md:mb-[120px]">
+    <div className="px-6 lg:px-[165px] md:px-10 flex flex-col md:flex-row gap-6 md:gap-[70px] mb-6 mt-6 lg:mt-14 md:mb-[120px]">
         <picture>
           <source srcSet={require(`../public${props.image.desktop.slice(1)}`).default.src} media='(min-width: 1024px)'/>
           <source srcSet={require(`../public${props.image.tablet.slice(1)}`).default.src} media='(min-width: 768px)' />

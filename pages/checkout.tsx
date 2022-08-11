@@ -46,7 +46,7 @@ const Checkout = () => {
   return (
     <div >
       <DynamicHeader/>
-      <div className="bg-grey2 px-6 ">
+      <div className="bg-grey2 px-6 md:px-10">
         <Link href={'#d'}><p className='pt-[106px] mb-6'>Go Back</p></Link>
         <CheckoutForm/>
       </div>

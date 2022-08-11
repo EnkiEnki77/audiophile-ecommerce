@@ -21,9 +21,8 @@ const YX1WirelessEarphones = () => {
   return (
     <>
       <DynamicHeader/>
-      <Link href={`/category/${itemData[0].category}`}><p className='pt-[106px] px-6'>Go Back</p></Link>
+      <Link href={`/category/${itemData[0].category}`}><p className='pt-[106px] px-6 md:px-10'>Go Back</p></Link>
       <Product image={itemData[0].image} new={itemData[0].new} name={itemData[0].name} description={itemData[0].description} price={itemData[0].price}/>
-      <AddToCart/>
       <Features features={itemData[0].features}/>
       <InTheBox includes={itemData[0].includes}/>
       <Preview gallery={itemData[0].gallery}/>
