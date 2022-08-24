@@ -19,7 +19,7 @@ const Categories = (props: {className?: string}) => {
                         }, 
                         ]
   return (
-    <div className={`${props.className} px-6 md:px-10 lg:px-[165px] py-10 lg:py-16 flex flex-col md:flex-row gap-4 md:gap-[10px] lg:gap-[30px] z-10`}>
+    <div className={`${props.className} lg:mb-[160px] px-6 md:px-10 lg:px-[165px] py-10 lg:py-16 flex flex-col md:flex-row gap-4 md:gap-[10px] lg:gap-[30px] z-10`}>
         {categories.map((category) => <Category key={category.id} img={category.img} category={category.category} href={category.href}/>)}
     </div>
   )

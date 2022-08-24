@@ -12,16 +12,16 @@ import YouMayAlsoLike from '../../../components/YouMayAlsoLike'
 import headphones from '../../../public/assets/product-xx59-headphones/mobile/image-category-page-preview.jpg'
 import data from '../../../data.json'
 import Link from 'next/link'
-import { DynamicHeader } from '../../../components/DynamicHeader'
+
 
 const ZX7Speakers = () => {
   const itemData = data.filter(item => item.slug === 'zx7-speaker')
   return (
     <>
-      <DynamicHeader/>
+      <Header/>
       <Link href={`/category/${itemData[0].category}`}><p className='pt-[106px] lg:pt-[169px] px-6 md:px-10 lg:px-[165px]'>Go Back</p></Link>
       <Product image={itemData[0].image} new={itemData[0].new} name={itemData[0].name} description={itemData[0].description} price={itemData[0].price}/>
-      <div className='lg:flex lg:px-[165px] justify-between'>
+      <div className="lg:flex lg:mb-[160px] lg:gap-[80px]">
         <Features features={itemData[0].features}/>
         <InTheBox includes={itemData[0].includes}/>
       </div>

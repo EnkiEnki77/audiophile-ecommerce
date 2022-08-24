@@ -30,24 +30,24 @@ const CheckoutInputs = (props: {inputsTitle: string}) => {
         <p className="sub-title mb-4">{props.inputsTitle}</p>
         
             {props.inputsTitle === 'billing details' && 
-            <div className=" flex flex-col gap-[56px] md:flex md:flex-wrap md:gap-4">
+            <div className=" flex flex-col gap-6 md:flex-row md:flex-wrap md:gap-4">
               {formElements.map(item => <FormElement className='md:basis-[calc(50%-0.5rem)]' label={item.label} inputType={item.inputType} id={item.id} placeholder={item.placeholder}/>)}
             </div>
             
             ||
             props.inputsTitle === 'shipping info' && 
-            <div>
-              {formElements2.map(item => <FormElement label={item.label} inputType={item.inputType} id={item.id} placeholder={item.placeholder}/>)}
+            <div className=" flex flex-col gap-6 md:flex-row md:flex-wrap md:gap-4">
+              {formElements2.map(item => <FormElement className='md:basis-[calc(50%-0.5rem)] md:first:basis-[calc(100%)]' label={item.label} inputType={item.inputType} id={item.id} placeholder={item.placeholder}/>)}
             </div>
             
             ||
             props.inputsTitle === 'payment details' && 
-            <div>
-              <div id='payment-method' className='flex flex-col gap-4'>
-                  <label className='font-bold text-[12px] leading-4 tracking-tight ' htmlFor='payment-method'>Payment Method</label>
-                  {formElements3.map(item => <FormElement label={item.label} inputType={item.inputType} id={item.id} placeholder={item.placeholder}/>)}
+            <div className=" flex flex-col gap-6 ">
+              <div id='payment-method' className='flex flex-col gap-4 md:flex-row md:flex-wrap'>
+                  <label className='font-bold text-[12px] leading-4 tracking-tight md:basis-[calc(50%-0.5rem)]' htmlFor='payment-method'>Payment Method</label>
+                  {formElements3.map(item => <FormElement className='md:basis-[calc(50%-0.5rem)] md:last:ml-auto' label={item.label} inputType={item.inputType} id={item.id} placeholder={item.placeholder}/>)}
               </div>
-              {formElements4.map(item => <FormElement label={item.label} inputType={item.inputType} id={item.id} placeholder={item.placeholder}/>)}
+              <div className='md:flex md:gap-4'>{formElements4.map(item => <FormElement className='md:basis-[calc(50%-0.5rem)] ' label={item.label} inputType={item.inputType} id={item.id} placeholder={item.placeholder}/>)}</div>
             </div>
             
             }

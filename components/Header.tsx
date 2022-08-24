@@ -22,13 +22,7 @@ type HeaderProps = {
 
 
  
-  const getWindowDimensions = () => {
-    const { innerWidth: width, innerHeight: height } = window;
-    return {
-      width,
-      height
-    };
-  } 
+
 
 
 const Header = (props: HeaderProps) => {
@@ -36,18 +30,22 @@ const Header = (props: HeaderProps) => {
 
   const [toggleMenu, setToggleMenu] = useState(false)
   const [toggleCart, setToggleCart] = useState(false)
-  const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+  const [width, setWidth] = useState(0)
 
   useEffect(() => {
+   const defaultSize = () => {
+    setWidth(window.innerWidth)
+   }
+   
+   const handleResize = () => {
+    setWidth(window.innerWidth)
+   }
     
+    defaultSize()
+    window.addEventListener('resize', handleResize)
+  }, [width])
 
-    function handleResize() {
-      setWindowDimensions(getWindowDimensions());
-    }
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  console.log(width)
 
   const handleToggleMenu = () => {
     if(toggleCart){
@@ -70,11 +68,11 @@ const Header = (props: HeaderProps) => {
   return (
     <div className='relative w-full '>
       <header className="h-[90px] bg-black2 flex items-center justify-around lg:justify-between md:justify-start md:px-10 lg:px-[165px] md:gap-10 fixed w-full z-20">
-          { windowDimensions.width < 1024 && <img  src={hamburger.src} alt="" onClick={handleToggleMenu}/>}
+          { width < 1024 && <img  src={hamburger.src} alt="" onClick={handleToggleMenu}/>}
           <Link href='/'>
               <img src={siteLogo.src} alt="" onClick={() => {return( setToggleCart(false), setToggleMenu(false))}}/>
           </Link>
-          { windowDimensions.width >= 1024 && <DesktopNav/>}
+          { width >= 1024 && <DesktopNav/>}
           <img className='md:ml-auto lg:ml-0' src={cart.src} alt="" onClick={handleToggleCart} />
       </header>
       {toggleMenu && [<MobileMenu/>, <Backdrop/>]}

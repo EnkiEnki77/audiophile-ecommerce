@@ -22,7 +22,7 @@ const CheckoutModal = (props:HeaderProps) => {
   // }, [props.cart[0].counter])
 
   // console.log(props.cart[0].counter)
-  let cartItems:cartObj[] = [...props.cart]
+  let cartItems = [...props.cart]
 
   const Cart = (e:React.MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) => {
     console.log(cartItems)

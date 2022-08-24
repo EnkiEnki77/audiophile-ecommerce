@@ -12,7 +12,7 @@ import YouMayAlsoLike from '../../../components/YouMayAlsoLike'
 import headphones from '../../../public/assets/product-xx59-headphones/mobile/image-category-page-preview.jpg'
 import data from '../../../data.json'
 import Link from 'next/link'
-import { DynamicHeader } from '../../../components/DynamicHeader'
+
 
 type cartObj = {
   img: {mobile: string, tablet: string, desktop: string},
@@ -50,11 +50,13 @@ const XX99MarkIHeadphones = () => {
 
   return (
     <>
-      <DynamicHeader/>
-      <Link href={`/category/${itemData[0].category}`}><p className='pt-[106px] md:pt-[122px] px-6 md:px-10'>Go Back</p></Link>
+      <Header/>
+      <Link href={`/category/${itemData[0].category}`}><p className='pt-[106px] lg:pt-[156px] px-6 md:px-10 lg:px-[160px]'>Go Back</p></Link>
       <Product image={itemData[0].image} new={itemData[0].new} name={itemData[0].name} description={itemData[0].description} price={itemData[0].price} counter={counter} decrement={decrement} increment={increment} onAddToCart={onAddToCart}/>
-      <Features features={itemData[0].features}/>
-      <InTheBox includes={itemData[0].includes}/>
+      <div className="lg:flex lg:mb-[160px] lg:gap-[80px]">
+        <Features features={itemData[0].features}/>
+        <InTheBox includes={itemData[0].includes}/>
+      </div>
       <Preview gallery={itemData[0].gallery}/>
       <YouMayAlsoLike others={itemData[0].others}/>
       <Categories className='mb-[78px] pt-0'/>

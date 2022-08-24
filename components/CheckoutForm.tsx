@@ -4,7 +4,7 @@ import Summary from './Summary'
 
 const CheckoutForm = () => {
   return (
-    <form className=" flex flex-col gap-8">
+    <form className=" flex flex-col gap-8 lg:flex-row">
         <Checkout/>
         <Summary/>
     </form>
