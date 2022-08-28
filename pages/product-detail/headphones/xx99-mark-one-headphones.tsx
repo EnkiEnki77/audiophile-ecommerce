@@ -23,6 +23,7 @@ type cartObj = {
 
 const XX99MarkIHeadphones = () => {
   
+  
   const itemData = data.filter(item => item.slug === 'xx99-mark-one-headphones')
   console.log(itemData)
   const [counter, setCounter] = useState(0)
@@ -50,9 +51,9 @@ const XX99MarkIHeadphones = () => {
 
   return (
     <>
-      <Header/>
+      <Header cart={cart}/>
       <Link href={`/category/${itemData[0].category}`}><p className='pt-[106px] lg:pt-[156px] px-6 md:px-10 lg:px-[160px]'>Go Back</p></Link>
-      <Product image={itemData[0].image} new={itemData[0].new} name={itemData[0].name} description={itemData[0].description} price={itemData[0].price} counter={counter} decrement={decrement} increment={increment} onAddToCart={onAddToCart}/>
+      <Product counter={counter} increment={increment} decrement={decrement} onAddToCart={onAddToCart} image={itemData[0].image} new={itemData[0].new} name={itemData[0].name} description={itemData[0].description} price={itemData[0].price}/>
       <div className="lg:flex lg:mb-[160px] lg:gap-[80px]">
         <Features features={itemData[0].features}/>
         <InTheBox includes={itemData[0].includes}/>

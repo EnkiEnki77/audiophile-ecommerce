@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import headphones from '../public/assets/cart/image-xx59-headphones.jpg'
 import Counter from './Counter'
 
@@ -8,6 +8,7 @@ type CounterProps = {
   price: number
   name: string
   img: {mobile:string, desktop: string, tablet: string}
+  total?: (total: number) => void
 }
 
 const SummaryItems = (props: CounterProps) => {
@@ -24,6 +25,10 @@ const SummaryItems = (props: CounterProps) => {
   const increment = (e: React.MouseEvent<HTMLParagraphElement, globalThis.MouseEvent>) => {
     setCounter(prev => prev + 1 )
   }
+
+  useEffect(() => {
+    if(typeof props.total !== 'undefined'){props.total(props.price * counter)}
+  }, [counter])
 
   let newPrice = props.price * counter
 

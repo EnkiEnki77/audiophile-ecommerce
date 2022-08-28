@@ -30,11 +30,11 @@ const Product = (props: productProps) => {
           <source srcSet={require(`../public${props.image.tablet.slice(1)}`).default.src} media='(min-width: 768px)' />
           <img className="min-w-[281px] lg:min-w-[36rem] lg:max-h-[36rem] first-letter:mb-2 rounded-lg" src={require(`../public${props.image.mobile.slice(1)}`).default.src} alt="" />
         </picture>
-        <div className='md:flex md:flex-col md:gap-4 justify-center'>
+        <div className='flex flex-col gap-4 justify-center'>
           {props.new && <p className="overlines ">new product</p>}
-          <h2 className=" md:mb-4">{props.name}</h2>
+          <h2 className=" pr-24 md:mb-4">{props.name}</h2>
           <p className="opacity-75 md:mb-4 md:pr-5">{props.description}</p>
-          <h6 className=" md:mb-4 lg:mb-8">{`$${price}`}</h6>
+          <h6 className=" mb-2 md:mb-4 lg:mb-8">{`$${price}`}</h6>
           <AddToCart counter={props.counter} decrement={props.decrement} increment={props.increment} onAddToCart={props.onAddToCart}/>
         </div>
     </div>

@@ -17,7 +17,7 @@ const RecommendedProduct = (props: {name: string, slug: string, image: {[k: stri
     }
 
   return (
-    <div className="flex flex-col gap-8 items-center mb-14 md:mb-0 w-1/3">
+    <div className="flex flex-col gap-8 items-center mb-14 md:mb-0 md:w-1/3">
         <picture className='w-full'> 
             <source srcSet={require(`../public${props.image.desktop.slice(1)}`).default.src} media='(min-width: 1024px)'/>
             <source srcSet={require(`../public${props.image.tablet.slice(1)}`).default.src} media='(min-width: 768px)'/>
