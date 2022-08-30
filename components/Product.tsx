@@ -8,10 +8,6 @@ interface productProps{
     name: string
     description: string
     price: number
-    counter: number
-    decrement: (e: React.MouseEvent<HTMLParagraphElement, globalThis.MouseEvent>) => void
-    increment: (e: React.MouseEvent<HTMLParagraphElement, globalThis.MouseEvent>) => void
-    onAddToCart:(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
 }
 
 const Product = (props: productProps) => {
@@ -35,7 +31,7 @@ const Product = (props: productProps) => {
           <h2 className=" pr-24 md:mb-4">{props.name}</h2>
           <p className="opacity-75 md:mb-4 md:pr-5">{props.description}</p>
           <h6 className=" mb-2 md:mb-4 lg:mb-8">{`$${price}`}</h6>
-          <AddToCart counter={props.counter} decrement={props.decrement} increment={props.increment} onAddToCart={props.onAddToCart}/>
+          <AddToCart price={props.price} new={props.new} name={props.name} description={props.description} image={props.image}/>
         </div>
     </div>
   )

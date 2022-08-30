@@ -9,6 +9,7 @@ import CheckoutModal from './CheckoutModal'
 import DesktopNav from './DesktopNav'
 
 
+
 type cartObj = {
   img: {mobile: string, tablet: string, desktop: string},
   name: string,
@@ -16,21 +17,19 @@ type cartObj = {
   counter: number
 }
 
-type HeaderProps = {
-  cart: cartObj[]
-}
 
 
  
 
 
 
-const Header = (props: HeaderProps) => {
+const Header = () => {
   
 
   const [toggleMenu, setToggleMenu] = useState(false)
   const [toggleCart, setToggleCart] = useState(false)
   const [width, setWidth] = useState(0)
+ 
 
   useEffect(() => {
    const defaultSize = () => {
@@ -67,16 +66,20 @@ const Header = (props: HeaderProps) => {
 
   return (
     <div className='relative w-full '>
-      <header className="h-[90px] bg-black2 flex items-center justify-around lg:justify-between md:justify-start md:px-10 lg:px-[165px] md:gap-10 fixed w-full z-20">
-          { width < 1024 && <img  src={hamburger.src} alt="" onClick={handleToggleMenu}/>}
+      <header className="h-[90px] bg-black2 flex items-center px-6 justify-around lg:justify-between md:justify-start md:px-10 lg:px-[165px] md:gap-10 fixed w-full z-20">
+          { width < 1024 && <img className=''  src={hamburger.src} alt="" onClick={handleToggleMenu}/>}
           <Link href='/'>
-              <img src={siteLogo.src} alt="" onClick={() => {return( setToggleCart(false), setToggleMenu(false))}}/>
+              <img  src={siteLogo.src} alt="" onClick={() => {return( setToggleCart(false), setToggleMenu(false))}}/>
           </Link>
           { width >= 1024 && <DesktopNav/>}
-          <img className='md:ml-auto lg:ml-0' src={cart.src} alt="" onClick={handleToggleCart} />
+          
+        <img className=' md:ml-auto lg:ml-0' src={cart.src} alt="" onClick={handleToggleCart} />
+            
+          
       </header>
       {toggleMenu && [<MobileMenu/>, <Backdrop/>]}
-      {toggleCart && [<CheckoutModal cart = {props.cart}/>, <Backdrop/>]}
+      {toggleCart && [<CheckoutModal/>, <Backdrop/>]}
+      
     </div>
   )
 }

@@ -2,6 +2,9 @@ import React, {useState, useEffect} from 'react'
 import Button from './Button'
 import SummaryItems from './SummaryItems'
 import SummaryTotals from './SummaryTotals'
+import {useAppSelector, useAppDispatch} from '../hooks'
+
+import {remove} from '../features/cart'
 
 type cartObj = {
   img: {mobile: string, tablet: string, desktop: string},
@@ -20,63 +23,30 @@ type CounterProps = {
   counter: number
 }
 
-type HeaderProps = {
-  cart: cartObj[]
-}
 
 
 
-const CheckoutModal = (props:HeaderProps) => {
-  const [cartItem, setCartItem] = useState([...props.cart])
-  const [totalPrice, setTotalPrice] = useState(0)
 
-  useEffect(() => {
-    const item = sessionStorage.getItem('cart')
-
-    if(item != null){setCartItem(JSON.parse(item))}
-  }, [])
-
-  useEffect(() =>{
-    sessionStorage.setItem('cart', JSON.stringify(cartItem))
-  }, [cartItem])
-
-  console.log(localStorage.item)
-  let cartItems = [...props.cart]
-
-  const handleTotal = (total: number) => {
-    setTotalPrice(total)
-  }
+console.log(useAppSelector)
 
 
+const CheckoutModal = () => {
 
-  console.log(totalPrice)
+  const dispatch = useAppDispatch()
+const cartItem = useAppSelector(state => state.cart.cartItem)
+const counter = useAppSelector(state => state.counter.value)
 
-  const Cart = (e:React.MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) => {
-    console.log(cartItems)
-  }
-
-  const RemoveAll = (e:React.MouseEvent<HTMLParagraphElement, globalThis.MouseEvent>) => {
-    setCartItem([])
-  }
-
-  const cartPrices = [...cartItem.map((item) => item.price)]
-
-  const cartTotal = cartPrices.reduce((a, b) => { return a + b}, 0)
-
-  console.log(cartItem)
-
-  
-
+console.log(cartItem)
 
   return (
     <div className="max-w-[327px] px-7 py-8 bg-white rounded-lg gap-6 flex flex-col pt-24">
         <div className="flex justify-between mb-2">
-            <h6>Cart ({cartItem.length})</h6>
-            <p onClick={RemoveAll} className='underline cursor-pointer opacity-50'>Remove all</p>
+            <h6>Cart ({cartItem[0].name !== '' ? cartItem.length : 0})</h6>
+            <p onClick={() => dispatch(remove())} className='underline cursor-pointer opacity-50'>Remove all</p>
         </div>
-        {cartItem.length > 0 && cartItem.map((item )=> <SummaryItems total={handleTotal} defaultCounter={item.counter} price={item.price} name={item.name} img={item.img} checkout={true}/>)}
-        {cartItem.length > 0 ? <SummaryTotals title="TOTAL" price={cartTotal} className='mt-2'/> : <SummaryTotals title="TOTAL" price={0} className='mt-2'/>}
-        <Button onClick={Cart}  btn='btn-1' href={'/checkout'}  className='w-full'>checkout</Button>
+        {cartItem[0].name !== '' && cartItem.map((item )=> <SummaryItems price={item.price} name={item.name} img={item.image} checkout={true}/>)}
+        {cartItem[0].name !== '' ? <SummaryTotals title="TOTAL"  className='mt-2'/> : <SummaryTotals title="TOTAL" className='mt-2'/>}
+        <Button  btn='btn-1' href={'/checkout'}  className='w-full'>checkout</Button>
     </div>
   )
 }

@@ -45,7 +45,7 @@ const Checkout = () => {
   console.log(itemData[0].name)
   return (
     < >
-      <Header/>
+      <Header cart={cart}/>
       <div className="bg-grey2 px-6 md:px-10 lg:px-[165px]">
         <Link href={'#d'}><p className='pt-[176px] mb-6 lg:mb-10'>Go Back</p></Link>
         <CheckoutForm/>
