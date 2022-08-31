@@ -44,22 +44,19 @@ const CheckoutModal = () => {
 const cartItem = useAppSelector(state => state.cart.cartItem)
 const counter = useAppSelector(state => state.counter.value)
 
-const [totalPrice, setTotalPrice] = useState(0)
+const [totalPrice, setTotalPrice] = useState<number>(0)
 
-useEffect(() => {
-  if(cartItem.length > 1){setTotalPrice(prev => prev - cartItem[cartItem.length - 1].price)}
-}, [cartItem])
 
 const handleTotalUp = (price: number) => {
   if(totalPrice === 0){
     setTotalPrice(price)
     return
   }
-  setTotalPrice(prev => prev + price)
+  setTotalPrice((prevState:number):number => {return prevState + price})
 }
 
 const handleTotalDown = (price: number) => {
-  setTotalPrice(prev => prev - price)
+  setTotalPrice((prevState:number):number => {return prevState - price})
 }
 
 useEffect(() => {
@@ -74,7 +71,7 @@ console.log(totalPrice)
             <h6>Cart ({cartItem[0].name !== '' ? cartItem.length : 0})</h6>
             <p onClick={() => dispatch(remove())} className='underline cursor-pointer opacity-50'>Remove all</p>
         </div>
-        {cartItem[0].name !== '' && cartItem.map((item )=> <SummaryItems totalUp={handleTotalUp} totalDown={handleTotalDown} price={item.price} name={item.name} img={item.image} checkout={true}/>)}
+        {cartItem[0].name !== '' && cartItem.map((item )=> <SummaryItems cartItem={cartItem} totalUp={handleTotalUp} totalDown={handleTotalDown} price={item.price} name={item.name} img={item.image} checkout={true}/>)}
         {cartItem[0].name !== '' ? <SummaryTotals total={totalPrice} title="TOTAL"  className='mt-2'/> : <SummaryTotals total={0} title="TOTAL" className='mt-2'/>}
         <Button  btn='btn-1' href={'/checkout'}  className='w-full'>checkout</Button>
     </div>

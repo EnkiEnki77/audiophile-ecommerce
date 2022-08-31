@@ -1,7 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import headphones from '../public/assets/cart/image-xx59-headphones.jpg'
 import Counter from './Counter'
 import {useAppSelector} from '../hooks'
+
+interface cartItem{
+    
+    price: number,
+    name: string,
+    image: {mobile:string, desktop: string, tablet: string},
+    defaultCounter: number
+}
 
 type CounterProps = {
   checkout?: boolean
@@ -10,6 +18,7 @@ type CounterProps = {
   img: {mobile:string, desktop: string, tablet: string}
   totalUp: (price: number) => void
   totalDown: (price: number) => void
+  cartItem: cartItem[]
 }
 
 const SummaryItems = (props: CounterProps) => {
@@ -20,9 +29,14 @@ const SummaryItems = (props: CounterProps) => {
 
   const [counter, setCounter] = useState(reduxCounter) 
 
+  const useEffectShouldRun = useRef(true)
+
   useEffect(() => {
-    props.totalUp(props.price)
-  }, [])
+    if(useEffectShouldRun.current){
+      useEffectShouldRun.current = false
+      console.log(props.price, counter)
+      props.totalUp(props.price * counter )}
+  },[])
 
 
   const incrementCounter = () => {
