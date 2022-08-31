@@ -1,18 +1,37 @@
 import React, { useState, useEffect } from 'react'
 import headphones from '../public/assets/cart/image-xx59-headphones.jpg'
 import Counter from './Counter'
+import {useAppSelector} from '../hooks'
 
 type CounterProps = {
   checkout?: boolean
   price: number
   name: string
   img: {mobile:string, desktop: string, tablet: string}
-  
+  totalUp: (price: number) => void
+  totalDown: (price: number) => void
 }
 
 const SummaryItems = (props: CounterProps) => {
 
-  console.log(props)
+  
+
+  const reduxCounter = useAppSelector(state => state.counter.value)
+
+  const [counter, setCounter] = useState(reduxCounter) 
+
+  useEffect(() => {
+    props.totalUp(props.price)
+  }, [])
+
+
+  const incrementCounter = () => {
+    setCounter(prev => prev + 1)
+  }
+
+  const decrementCounter = () => {
+    setCounter(prev => prev - 1)
+  }
 
   return (
   <>
@@ -21,9 +40,9 @@ const SummaryItems = (props: CounterProps) => {
           <div className="flex  justify-between w-full pl-4 items-center">
               <div className="flex flex-col">
                   <p className='font-bold'>{props.name}</p>
-                  <p className=''>{`$${0}`}</p> 
+                  <p className=''>{`$${props.price * counter}`}</p> 
               </div>  
-              <Counter className='counter-sm' />
+              <Counter price={props.price} totalUp={props.totalUp} totalDown={props.totalDown} counter={counter} increment={incrementCounter} decrement={decrementCounter} className='counter-sm' />
           </div>
       </div>
       :

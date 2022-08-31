@@ -2,9 +2,17 @@ import React, {useState, useEffect} from 'react'
 import Button from './Button'
 import SummaryItems from './SummaryItems'
 import SummaryTotals from './SummaryTotals'
-import {useAppSelector, useAppDispatch} from '../hooks'
-
+import {useAppSelector, useAppDispatch, parseCookies} from '../hooks'
 import {remove} from '../features/cart'
+import Cookie from 'js-cookie'
+import { NextPage, NextPageContext } from 'next'
+import http from "http"
+
+
+
+interface Props {
+  userAgent?: string;
+}
 
 type cartObj = {
   img: {mobile: string, tablet: string, desktop: string},
@@ -36,7 +44,29 @@ const CheckoutModal = () => {
 const cartItem = useAppSelector(state => state.cart.cartItem)
 const counter = useAppSelector(state => state.counter.value)
 
-console.log(cartItem)
+const [totalPrice, setTotalPrice] = useState(0)
+
+useEffect(() => {
+  if(cartItem.length > 1){setTotalPrice(prev => prev - cartItem[cartItem.length - 1].price)}
+}, [cartItem])
+
+const handleTotalUp = (price: number) => {
+  if(totalPrice === 0){
+    setTotalPrice(price)
+    return
+  }
+  setTotalPrice(prev => prev + price)
+}
+
+const handleTotalDown = (price: number) => {
+  setTotalPrice(prev => prev - price)
+}
+
+useEffect(() => {
+  Cookie.set('cart', JSON.stringify(cartItem))
+},[cartItem])
+
+console.log(totalPrice)
 
   return (
     <div className="max-w-[327px] px-7 py-8 bg-white rounded-lg gap-6 flex flex-col pt-24">
@@ -44,11 +74,16 @@ console.log(cartItem)
             <h6>Cart ({cartItem[0].name !== '' ? cartItem.length : 0})</h6>
             <p onClick={() => dispatch(remove())} className='underline cursor-pointer opacity-50'>Remove all</p>
         </div>
-        {cartItem[0].name !== '' && cartItem.map((item )=> <SummaryItems price={item.price} name={item.name} img={item.image} checkout={true}/>)}
-        {cartItem[0].name !== '' ? <SummaryTotals title="TOTAL"  className='mt-2'/> : <SummaryTotals title="TOTAL" className='mt-2'/>}
+        {cartItem[0].name !== '' && cartItem.map((item )=> <SummaryItems totalUp={handleTotalUp} totalDown={handleTotalDown} price={item.price} name={item.name} img={item.image} checkout={true}/>)}
+        {cartItem[0].name !== '' ? <SummaryTotals total={totalPrice} title="TOTAL"  className='mt-2'/> : <SummaryTotals total={0} title="TOTAL" className='mt-2'/>}
         <Button  btn='btn-1' href={'/checkout'}  className='w-full'>checkout</Button>
     </div>
   )
+}
+
+CheckoutModal.getInitialProps = async (req: Promise<> ) => {
+   
+  return {props}
 }
 
 export default CheckoutModal

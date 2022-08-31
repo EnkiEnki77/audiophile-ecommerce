@@ -22,7 +22,7 @@ const AddToCart = (props:productProps) => {
   return (
     <div className="flex  gap-4 mb-[88px] md:px-0 md:mb-0">
         <Counter className="counter-lg" />
-        <Button onClick={() => {dispatch(addToCart({image: props.image, new: props.new, name: props.name, description: props.description, price: props.price, counter: counter}))}} notLink={true} btn='btn-1'>Add to cart</Button>
+        <Button onClick={() => {dispatch(addToCart({image: props.image, new: props.new, name: props.name, description: props.description, price: props.price, defaultCounter: counter}))}} notLink={true} btn='btn-1'>Add to cart</Button>
     </div>
   )
 }

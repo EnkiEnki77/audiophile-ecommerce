@@ -27,13 +27,15 @@ const XX59Headphones = () => {
   console.log(itemData)
  
 
-  console.log(itemData[0].name)
+  console.log()
+
+  const name = itemData[0].name.replace(' Headphones', '')
 
   return (
     <>
       <Header/>
       <Link href={`/category/${itemData[0].category}`}><p className='pt-[106px] lg:pt-[156px] px-6 md:px-10 lg:px-[160px]'>Go Back</p></Link>
-      <Product  image={itemData[0].image} new={itemData[0].new} name={itemData[0].name} description={itemData[0].description} price={itemData[0].price}/>
+      <Product  image={itemData[0].image} new={itemData[0].new} name={name} description={itemData[0].description} price={itemData[0].price}/>
       <div className="lg:flex lg:mb-[160px] lg:gap-[80px]">
         <Features features={itemData[0].features}/>
         <InTheBox includes={itemData[0].includes}/>
